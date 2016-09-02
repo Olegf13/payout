@@ -1,0 +1,14 @@
+{
+  "name": "olegf13/payout-api",
+  "description": "PHP implementation of API integration with Payoutmoney service.",
+  "license": "proprietary",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "olegf13\\": ""
+    }
+  },
+  "bin": [
+    "bin/generate_keys"
+  ]
+}

@@ -76,10 +76,12 @@ class PayOut
      */
     public function getKeyPath()
     {
-        if (file_exists(__DIR__ . '/keys/secret.key')) {
-            return __DIR__ . '/keys/secret.key';
+        $keyPath = __DIR__ . '/../../../keys/secret.key';
+        if (file_exists($keyPath)) {
+            return $keyPath;
         }
-        throw new \RuntimeException('Secret key not found');
+
+        throw new \RuntimeException("Secret key not found in `{$keyPath}`");
     }
 
     /**

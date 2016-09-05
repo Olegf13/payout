@@ -1,18 +1,31 @@
 # Пример использования клиента для интеграции API Payoutmoney
 
+Предварительно нужно в папке проекта установить библиотеку клиента API как Composer зависимость:
+
+```
+composer require olegf13/payout-api
+```
+
+Пример кода:
+
 ```
 <?php
-
 use olegf13\PayOut;
+
+require __DIR__ . '/vendor/autoload.php';
 
 $gate = new PayOut();
 $gate->setPoint('010999'); // идентификатор проекта
 
 // Запрос баланса
 $balance = $gate->getBalance();
+//echo $balance . PHP_EOL;
+//die(PHP_EOL);
 
 // Список провайдеров
 $resp = $gate->getProviders();
+//echo $resp . PHP_EOL;
+//die(PHP_EOL);
 
 $payment = [
     'payment_id' => 1, // id платежа в Вашей системе
